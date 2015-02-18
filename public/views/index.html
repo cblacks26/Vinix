@@ -1,0 +1,43 @@
+<core-animated-pages onclick="stuff();" transitions="slide-from-right">
+  <section>
+    <div layout vertical center center-justified style="background:red;">
+      <div>Vinix Inc</div>
+    </div>
+  </section>
+  <section>
+    <div layout vertical center center-justified style="background:blue;">
+      <div>2</div>
+    </div>
+  </section>
+  <section>
+    <div layout vertical center center-justified style="background:purple;">
+      <div>3</div>
+    </div>
+  </section>
+  <section>
+    <div layout vertical center center-justified style="background:orange;">
+      <div>4</div>
+    </div>
+  </section>
+  <section>
+    <div layout vertical center center-justified style="background:green;">
+      <div>5</div>
+    </div>
+  </section>
+</core-animated-pages>
+
+<script>
+	var up = true;
+	var max = 4;
+	function stuff() {
+		var p = document.querySelector('core-animated-pages');
+		if (up && p.selected === max || !up && p.selected === 0) {
+			up = !up;
+		}
+		if (up) {
+			p.selected += 1;
+		} else {
+			p.selected -= 1;
+		}
+	}
+</script>
